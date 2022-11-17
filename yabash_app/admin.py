@@ -8,4 +8,6 @@ class TestimonialAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
 
 
-admin.site.register(Headline)
+@admin.register(Headline)
+class HeadlineAdmin(SummernoteModelAdmin):
+    search_fields = ['headline_text', 'status']
