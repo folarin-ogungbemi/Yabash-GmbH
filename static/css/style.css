@@ -6,6 +6,9 @@
 2. Hero
 3. Features
 4. About
+5. Contact Section
+    5.1 contacts
+    5.2 social-network
 
 */
 
@@ -106,4 +109,66 @@ body{
 
 .kitchen-image img:hover{
     box-shadow: 30px -10px rgb(24, 36, 36);
+}
+
+/*-----------Contacts--------------*/
+
+#contact{
+    position: relative;
+    background-color:  rgb(24, 36, 36, 0.9);
+    min-height: 30vh;
+}
+
+#contact h3{
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+#contact p,
+#contact span,
+#contact th,
+#contact td{
+    font-size: 0.8rem;
+}
+
+
+.contact-details{
+    color:rgb(215, 227, 227);
+}
+
+.contact-copywrite{
+    font-size: 0.8rem;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    background-color:rgb(24, 36, 36);
+}
+
+/*-----------social-networks--------------*/
+.social-networks>ul{
+    display: flex;
+    justify-content: center;
+}
+
+.social-networks li{
+    list-style: none;
+}
+
+.social-networks a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 800;
+    color:rgb(215, 227, 227);
+}
+
+.social-networks h3{
+    margin-top: 2rem;
+}
+
+.social-networks a:hover,
+.contact-copywrite a:hover,
+.yabash-features i,
+.contact-remote i{
+    color: rgb(220, 53, 69,75%);
 }
