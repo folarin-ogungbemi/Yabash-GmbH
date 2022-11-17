@@ -131,6 +131,9 @@ body{
 }
 
 /*-----------Contacts--------------*/
+#map{
+    min-height: 320px;
+}
 
 #contact{
     position: relative;
