@@ -75,6 +75,11 @@ h2{
     box-shadow: none;
 }
 
+.btn-secondary{
+    background-color: rgb(215, 227, 227);
+    color:rgb(24, 36, 36);
+}
+
 button{
     border-width: 0;
 }
