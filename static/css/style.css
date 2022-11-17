@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200&display=swap');
 
+
+/* Table of content
+1. General style
+2. Hero
+3. Features
+
+*/
+
+
+/*  ***********
+    General style
+    *********** */
+
 body{
     font-family: 'Poppins', sans-serif;
     color: rgb(215, 227, 227);
@@ -57,4 +70,21 @@ body{
 
 .info{
     margin: 0px;
+}
+
+/*-----------Features--------------*/
+.yabash-features{
+    background-color:rgb(24, 36, 36, 0.9);
+    min-height: 20vh;
+}
+
+.yabash-features h2{
+    font-size: 1.5rem;
+    color:rgb(215, 227, 227);
+}
+
+.feature-title{
+    font-size: 1.2rem;
+    color: rgb(215, 227, 227);
+    text-transform: uppercase;
 }
