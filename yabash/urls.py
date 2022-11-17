@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from yabash_app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="home"),
+    path("", include("yabash_app.urls"), name="homePage"),
     path('summernote/', include('django_summernote.urls')),
 ]
