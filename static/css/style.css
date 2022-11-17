@@ -41,6 +41,14 @@ h2{
     color: #dc3545;
 }
 
+.social-networks a:hover,
+.contact-copywrite a:hover,
+.yabash-features i,
+.contact-remote i,
+.testimonial-content i{
+    color: rgb(220, 53, 69,75%);
+}
+
 /*-----------Input form--------------*/
 .form-control{
     color:rgb(24, 36, 36);
@@ -183,6 +191,23 @@ button{
     text-transform: uppercase;
 }
 
+/*-----------Testimonials--------------*/
+#testimonial{
+    color: rgb(24, 36, 36);
+}
+
+.testimonial-head{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-quote{
+    padding: 1rem;
+    box-shadow: 3px 4px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
 /*-----------About---------------*/
 
 #about-yabash{
@@ -257,11 +282,4 @@ button{
 
 .social-networks h3{
     margin-top: 2rem;
-}
-
-.social-networks a:hover,
-.contact-copywrite a:hover,
-.yabash-features i,
-.contact-remote i{
-    color: rgb(220, 53, 69,75%);
 }
