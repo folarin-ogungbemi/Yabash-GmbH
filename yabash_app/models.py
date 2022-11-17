@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
+STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Testimonial(models.Model):
@@ -17,3 +20,16 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f"{self.summary} Testimony {self.content} by {self.name}"
+
+
+class Headline(models.Model):
+    headline_text = models.CharField(max_length=200, unique=True)
+    sub_text = models.CharField(max_length=200, unique=True)
+    contact = models.CharField(max_length=50)
+    reservation = models.CharField(max_length=50)
+    images = CloudinaryField('image', default='placeholder')
+    opening_time = models.CharField(max_length=50)
+    status = models.IntegerField(choices=STATUS, default=0)
+
+    def __str__(self):
+        return self.headline_text
