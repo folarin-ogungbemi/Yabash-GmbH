@@ -31,3 +31,17 @@ body{
     background-size: cover;
     position: relative;
 }
+
+.head-text{
+    text-transform: capitalize;
+    color: rgb(215, 227, 227);
+    font-size: calc(2rem + 1vw);
+}
+
+.hero-text{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+}
