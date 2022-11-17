@@ -2,8 +2,12 @@
 
 
 /* Table of content
+----------------------------
 1. GENERAL STYLE
+    1.1 General
+    1.2 Input form
 2. BASE 
+    2.1 Navbar & Canvas
 3. INDEX
     3.1 Hero
     3.2 Features
@@ -18,11 +22,23 @@
 /*  ***********
     GENERAL STYLE
     *********** */
+/*-----------General--------------*/
 
 body{
     font-family: 'Poppins', sans-serif;
     color: rgb(215, 227, 227);
 } 
+
+h2{
+    text-transform: uppercase;
+    color: rgb(24, 36, 36);
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #dc3545;
+}
 
 /*-----------Input form--------------*/
 .form-control{
@@ -35,6 +51,38 @@ body{
 
 .form-control:focus-visible{
     outline: none;
+}
+
+/*  ***********
+    BASE
+    *********** */
+/*-----------Navbar & Canvas--------------*/
+
+.navbar{
+    background-color: rgba(0,0,0,0.1);
+    --bs-navbar-toggler-focus-width: 0;
+}
+
+.nav-link{
+    color:rgb(215, 227, 227);
+}
+
+.offcanvas-header, .offcanvas-body{
+    background-color: rgb(24, 36, 36);
+}
+
+.navbar-brand:hover{
+    color:rgb(24, 36, 36);
+}
+
+.navbar-toggler{
+    border: 0;
+}
+
+.offcanvas-body a:hover{
+    color:rgb(215, 227, 227);
+    background-color: #dc3545;
+    text-align: center;
 }
 
 /*  ***********
