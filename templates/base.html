@@ -51,13 +51,13 @@
                   <a href="{% url 'homePage' %}" class="active nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">About</a>
+                  <a href="{% url 'homePage' %}#about-yabash" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">Menu</a>
+                  <a href="{% static 'images/menu.pdf' %}" class="nav-link">Menu</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">Contact</a>
+                  <a href="{% url 'homePage' %}#contact" class="nav-link">Contact</a>
                 </li>
               </ul>
             </div>
