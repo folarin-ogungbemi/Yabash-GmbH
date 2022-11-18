@@ -208,6 +208,21 @@ button{
     justify-content: center;
 }
 
+.testimonial-summary{
+    font-size: calc(0.6rem + 1vw);
+    font-weight: 400;
+}
+
+.testimonial-content{
+    position: relative;
+    font-size: calc(0.3rem + 1vw);
+}
+
+.fa-quote-left{
+    position: absolute;
+    left:3%;
+}
+
 .user-quote{
     padding: 1rem;
     box-shadow: 3px 4px 5px 1px rgba(0, 0, 0, 0.2);

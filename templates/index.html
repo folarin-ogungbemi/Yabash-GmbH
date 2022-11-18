@@ -192,32 +192,19 @@
         </div>
       </div>
     </div>
-    <div class="testimonial-content container my-4">
+    <div class="container my-4">
       <div class="row mx-auto container">
+        {% for testimonial in testimonials %}
         <figure class="col-12 col-md-4 user-quote">
-          <blockquote class="blockquote">
-            <p><i class="fa-solid fa-quote-left"></i>
-              Yabash makes It easy to feel at home. Their Amala and gbegiri
-              dish is so heavenly.
+          <div class="text-start mb-1 testimonial-summary">{{testimonial.summary}}</div>
+          <blockquote class="blockquote testimonial-content">
+           <p><i class="fa-solid fa-quote-left"></i>
+              {{testimonial.content | safe}}
             </p>
           </blockquote>
-          <figcaption class="blockquote-footer">Morolakemi</figcaption>
+          <figcaption class="blockquote-footer text-end">{{testimonial.name}}</figcaption>
         </figure>
-        <figure class="col-12 col-md-4 user-quote">
-          <blockquote class="blockquote">
-            <p><i class="fa-solid fa-quote-left"></i>
-              Such a beautiful and heartwarming experience. I definitely
-              recommend it.
-            </p>
-          </blockquote>
-          <figcaption class="blockquote-footer">John</figcaption>
-        </figure>
-        <figure class="col-12 col-md-4 user-quote">
-          <blockquote class="blockquote">
-            <p><i class="fa-solid fa-quote-left"></i> I love it here. Their service is really good.</p>
-          </blockquote>
-          <figcaption class="blockquote-footer">Melanie</figcaption>
-        </figure>
+        {% endfor %}
       </div>
     </div>
   </article>
