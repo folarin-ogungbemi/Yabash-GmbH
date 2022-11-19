@@ -73,7 +73,8 @@ input:focus-visible {
     outline: none;
 }
 
-.user-login{
+.user-login,
+.user-signup{
     position: absolute;
     inset: 0;
     margin: auto;
