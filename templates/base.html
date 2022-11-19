@@ -79,133 +79,7 @@
       <!--/.Nav links-->
     {% block content %}
     {% endblock %}
-    <footer id="contact">
-        <div class="contact-details container text-center">
-            <div class="row">
-              <div class="col-12 col-md-4 order-md-1 order-last my-2">
-                <!--Google Map-->
-                <div id="map" class="mb-3"></div>
-                <!--/.Google Map-->
-              </div>
-              <div class="col-12 col-md-4 mt-2 order-md-2 order-2 mt-2">
-                <!--contact information-->
-                <div class="contact-address row">
-                  <!--contact-location-->
-                  <div class="location col-6 col-md-12">
-                      <h3>Address</h3>
-                      <p>
-                        Yabash GmbH, <br>
-                        123 Alexander street, <br>
-                        Berlin
-                      </p>
-                  </div>
-                  <div class="contact-remote col-6 col-md-12">
-                      <h3>Contact Us</h3>
-                      <div>
-                        <span><i class="fa-solid fa-phone me-3"></i></span>
-                        <span>+49 123 456 789</span>
-                      </div>
-                      <div>
-                        <span><i class="fa-solid fa-envelope"></i></span>
-                        <span>email@yabash.de</span>
-                      </div>
-                  </div>
-                  <!--/.contact-location-->
-                  <!--Opening-times-->
-                  <div class="mx-auto my-2">
-                    <div class="opening">
-                      <h3>Opening times</h3>
-                      <table class="mx-auto mb-2">
-                        <tr>
-                          <th></th>
-                          <th>Open</th>
-                          <th>- Close</th>
-                        </tr>
-                        <tr>
-                          <td>Mon - Sun :</td>
-                          <td>08:00</td>
-                          <td>- 23:00</td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                  <!--/.Opening-times-->
-                </div>
-                <!--/.contact information-->
-              </div>
-              <div class="col-12 col-md-4 order-md-3 order-first">
-                <!--News letter-->
-                <div class="contact-head mt-2">
-                    <div class="row">
-                      <div class="col-12">
-                        <h3>Stay in touch</h3>
-                      </div>
-                    </div>
-                </div>
-                  <form>
-                    <div class="mb-3">
-                      <label for="subscribeEmail" class="form-label"
-                        >Sign up for our Newsletter</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="subscribeEmail"
-                        placeholder="john@example.com"
-                        aria-describedby="subscribeEmail"
-                      >
-                    </div>
-                    <button type="submit" class="btn btn-md btn-danger">
-                      Subscribe
-                    </button>
-                  </form>
-                <!--/.News letter-->
-                <!--social-networks-->
-                <div class="social-networks">
-                  <h3>Follow Us</h3>
-                  <ul>
-                    <li>
-                      <a
-                        href="https://facebook.com"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="visit our Facebook page(open in a new tab)"
-                        ><i class="fa-brands fa-facebook me-5"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://twitter.com"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="visit our Twitter page(open in a new tab)"
-                        ><i class="fa-brands fa-square-twitter me-5"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://youtube.com"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="visit our Youtube page(open in a new tab)"
-                        ><i class="fa-brands fa-square-youtube me-5"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="visit our Instagram page(open in a new tab)"
-                        ><i class="fa-brands fa-instagram me-5"></i
-                      ></a>
-                    </li>
-                  </ul>
-                </div>
-                <!--/.social-networks-->
-              </div>
-            </div>
-          </div>
+    <footer>
         <!--Copywrite-->
         <div class="contact-copywrite fixed-bottom">
             <div class="row">
@@ -239,6 +113,6 @@
     <!-- Google Map-->
     <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf8scAUZ1Y2I7v1wb-RVWDWVgEvO9x-PY&callback=initMap"></script>
-    <script src="../static/js/maps.js"></script>
+    <script src="{% static 'js/maps.js' %}"></script>
 </body>
 </html>
