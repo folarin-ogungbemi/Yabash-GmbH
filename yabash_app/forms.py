@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput
 from .models import Booking
 
 
@@ -13,3 +13,10 @@ class BookingForm(ModelForm):
             'event_time',
             'event_type',
             'event_info']
+    widgets = {
+            'no_of_guest': TextInput(attrs={'class': 'form-control'}),
+            'event_date': TextInput(attrs={'class': 'form-control'}),
+            'event_time': TextInput(attrs={'class': 'form-control'}),
+            'event_type': TextInput(attrs={'class': 'form-control'}),
+            'event_info': TextInput(attrs={'class': 'form-control'}),
+        }
