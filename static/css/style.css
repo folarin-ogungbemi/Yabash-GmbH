@@ -5,7 +5,7 @@
 ----------------------------
 1. GENERAL STYLE
     1.1 General
-    1.2 Input form
+    1.2 Registration Form
     1.3 Button
 2. BASE 
     2.1 Navbar & Canvas
@@ -50,7 +50,7 @@ h2{
     color: rgb(220, 53, 69,75%);
 }
 
-/*-----------Input form--------------*/
+/*-----------Registration Form--------------*/
 .card{
     border-radius: 0;
     border-color: rgb(215, 227, 227);
@@ -82,14 +82,14 @@ input:focus-visible {
     width: 60%;
     color:rgb(24, 36, 36);
     background-color:  rgb(215, 227, 227);
-    box-shadow: -2px 2px 3px 2px rgba(24, 36, 36, 0.2);;
+    box-shadow: -2px 2px 3px 2px rgba(24, 36, 36, 0.2);
 }
 
 .registration .btn{
     color: rgb(215, 227, 227);
 }
 
-label{
+.registration label{
     color:rgb(24, 36, 36);
 }
 
@@ -138,7 +138,7 @@ button{
 /*-----------Navbar & Canvas--------------*/
 
 .navbar{
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(24, 36, 36, 0.6);
     --bs-navbar-toggler-focus-width: 0;
 }
 
@@ -147,11 +147,11 @@ button{
 }
 
 .offcanvas-header, .offcanvas-body{
-    background-color: rgb(24, 36, 36);
+    background: rgb(24, 36, 36);
 }
 
 .navbar-brand:hover{
-    color:rgb(24, 36, 36);
+    color:rgb(215, 227, 227);
 }
 
 .navbar-toggler{
@@ -252,8 +252,8 @@ button{
 }
 
 .testimonial-summary{
-    font-size: calc(0.6rem + 1vw);
-    font-weight: 400;
+    font-size: calc(0.3rem + 1vw);
+    font-weight: 500;
 }
 
 .testimonial-content{
@@ -268,7 +268,7 @@ button{
 
 .user-quote{
     padding: 1rem;
-    box-shadow: 2px 2px 0.5px 0.5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 0.5px 0.5px rgba(24, 36, 36, 0.2);
 }
 
 /*-----------About---------------*/
@@ -276,7 +276,7 @@ button{
 #about-yabash{
     color:rgb(24, 36, 36);
     min-height: 30vh;
-    background-color:#D9D9D9 ;
+    background-color:rgb(215, 227, 227) ;
 }
 
 .about-head,
