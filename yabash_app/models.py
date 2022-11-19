@@ -31,15 +31,50 @@ class Testimonial(models.Model):
         return f"{self.summary} by {self.name}"
 
 
+# Defines the capacity of the tables in the restaurant
+CAPACITY = (
+    (1, "One"),
+    (2, "Two"),
+    (3, "Three"),
+    (4, "Four"),
+    (5, "Five"),
+    (6, "Six"),
+    (7, "Seven"),
+    (8, "Eight"),
+    (9, "Nine"),
+    (10, "Ten"))
+
+AVAILABLE = ((0, "No"), (1, "Yes"))
+
+
+# The Table Entity should be tracked
+class Table(models.Model):
+    capacity = models.IntegerField(choices=CAPACITY)
+    available = models.IntegerField(choices=AVAILABLE, default=0)
+    availability = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"{self.capacity}"
+
+
 # Booking system for users
 class Booking(models.Model):
     client = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name="make_reservation",
+        related_name="user_reservation",
         null=False,
         blank=False)
-    no_of_guest = models.IntegerField(null=False, blank=False)
+    no_of_guest = models.ForeignKey(
+        Table,
+        on_delete=models.CASCADE,
+        related_name="table_capacity",
+        null=False,
+        blank=False)
     event_date = models.DateField(null=False, blank=False)
     event_time = models.TimeField(null=False, blank=False)
     event_type = models.CharField(max_length=100)
@@ -51,4 +86,4 @@ class Booking(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return self.client
+        return f"{self.no_of_guest}"
