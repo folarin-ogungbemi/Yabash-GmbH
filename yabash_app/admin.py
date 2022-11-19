@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Testimonial, Author
+from .models import Testimonial, Booking, Author
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -10,3 +10,11 @@ class TestimonialAdmin(SummernoteModelAdmin):
 
 
 admin.site.register(Author)
+
+
+@admin.register(Booking)
+class BookingAdmin(SummernoteModelAdmin):
+    list_display = ('client', 'event_type', 'event_date', 'event_time')
+    summernote_fields = ('event_info')
+    search_fields = ['client', 'event_type']
+    list_filter = ('event_type', 'event_date', 'no_of_guest')
