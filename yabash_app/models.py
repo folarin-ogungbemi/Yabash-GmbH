@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -32,7 +33,7 @@ class Testimonial(models.Model):
 
 
 # Defines the capacity of the tables in the restaurant
-CAPACITY = (
+CAPACITY = [
     ("1 Person", "1 Person"),
     ("2 People", "2 People"),
     ("3 People", "3 People"),
@@ -43,18 +44,33 @@ CAPACITY = (
     ("8 People", "8 People"),
     ("9 People", "9 People"),
     ("10 People", "10 People"),
-    )
+    ]
 
-TABLE_STATUS = ((0, "No"), (1, "Yes"))
+HOURS = [
+    ("08:00 am", "08:00 am"),
+    ("10:00 am", "10:00 am"),
+    ("12:00 pm", "12:00 pm"),
+    ("14:00 pm", "14:00 pm"),
+    ("16:00 pm", "16:00 pm"),
+    ("18:00 pm", "18:00 pm"),
+    ("20:00 pm", "20:00 pm"),
+    ("22:00 pm", "22:00 pm"),
+]
+
+EVENTS = [
+    ("BP", "Birthday Party"),
+    ("M", "Meeting"),
+    ("C", "Ceremony"),
+    ("PR", "Private Reservation"),
+]
 
 
 # The Table Entity should be tracked
 class Table(models.Model):
-    capacity = models.IntegerField(choices=CAPACITY)
+    capacity = models.CharField(choices=CAPACITY, max_length=10, default="2 People")
     available = models.BooleanField(default=False)
-    availability = models.DateTimeField(auto_now=True)
+    updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now=True)
-    table_status = models.IntegerField(choices=TABLE_STATUS, default=0)
 
     class Meta:
         ordering = ['created_on']
@@ -78,8 +94,8 @@ class Booking(models.Model):
         null=False,
         blank=False)
     event_date = models.DateField(null=False, blank=False)
-    event_time = models.TimeField(null=False, blank=False)
-    event_type = models.CharField(max_length=100)
+    event_time = models.CharField(choices=HOURS, max_length=10, default="12:00 pm")
+    event_type = models.CharField(choices=EVENTS, max_length=20, default="Birthday Party")
     event_info = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -88,10 +104,4 @@ class Booking(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return self.no_of_guest
-
-    def check_table(self):
-        for table in CAPACITY:
-            if availability is True:
-                return self.capacity
-
+        return f"{self.client} | {self.no_of_guest} | {self.event_date} | {self.event_time}"
