@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -93,8 +94,8 @@ class Booking(models.Model):
         related_name="table_capacity",
         null=False,
         blank=False)
-    event_date = models.DateField(null=False, blank=False)
-    event_time = models.CharField(choices=HOURS, max_length=10, default="12:00 pm")
+    event_date = models.DateField(default=datetime.now)
+    event_time = models.CharField(choices=HOURS, max_length=10, default="10:00 am")
     event_type = models.CharField(choices=EVENTS, max_length=20, default="Birthday Party")
     event_info = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
