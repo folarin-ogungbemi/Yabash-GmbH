@@ -17,13 +17,13 @@ class BookingAdmin(SummernoteModelAdmin):
     list_display = ('client', 'event_type', 'event_date', 'event_time')
     list_display = (
         'client',
-        'no_of_guest',
+        'number_of_guest',
         'event_type',
         'event_date',
         'event_time')
     summernote_fields = ('event_info')
     search_fields = ['client', 'event_type']
-    list_filter = ('event_type', 'event_date', 'no_of_guest')
+    list_filter = ('event_type', 'event_date', 'number_of_guest')
 
 
 @admin.register(Table)

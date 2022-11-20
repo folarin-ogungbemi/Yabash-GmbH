@@ -70,8 +70,7 @@ EVENTS = [
 class Table(models.Model):
     capacity = models.CharField(
         choices=CAPACITY,
-        max_length=10,
-        default="2 People")
+        max_length=10)
     available = models.BooleanField(default=False)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now=True)
@@ -91,12 +90,13 @@ class Booking(models.Model):
         related_name="user_reservation",
         null=False,
         blank=False)
-    no_of_guest = models.ForeignKey(
+    number_of_guest = models.ForeignKey(
         Table,
         on_delete=models.CASCADE,
         related_name="table_capacity",
         null=False,
-        blank=False)
+        blank=False,
+        default="")
     event_date = models.DateField(default=datetime.now)
     event_time = models.CharField(
         choices=HOURS,
@@ -106,7 +106,7 @@ class Booking(models.Model):
         choices=EVENTS,
         max_length=20,
         default="Birthday Party")
-    event_info = models.TextField()
+    event_info = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
 
@@ -114,4 +114,4 @@ class Booking(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return f"{self.client} | {self.no_of_guest} | {self.event_date} | {self.event_time}"
+        return f"{self.client} | {self.number_of_guest} | {self.event_date} | {self.event_time}"
