@@ -33,16 +33,16 @@ class Testimonial(models.Model):
 
 # Defines the capacity of the tables in the restaurant
 CAPACITY = (
-    (1, "One"),
-    (2, "Two"),
-    (3, "Three"),
-    (4, "Four"),
-    (5, "Five"),
-    (6, "Six"),
-    (7, "Seven"),
-    (8, "Eight"),
-    (9, "Nine"),
-    (10, "Ten"),
+    ("1 Person", "1 Person"),
+    ("2 People", "2 People"),
+    ("3 People", "3 People"),
+    ("4 People", "4 People"),
+    ("5 People", "5 People"),
+    ("6 People", "6 People"),
+    ("7 People", "7 People"),
+    ("8 People", "8 People"),
+    ("9 People", "9 People"),
+    ("10 People", "10 People"),
     )
 
 TABLE_STATUS = ((0, "No"), (1, "Yes"))
@@ -61,10 +61,6 @@ class Table(models.Model):
 
     def __str__(self):
         return f"{self.capacity}"
-
-    def check_table(self):
-        if TABLE_STATUS == 1:
-            return self.available
 
 
 # Booking system for users
@@ -87,10 +83,15 @@ class Booking(models.Model):
     event_info = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
-    
 
     class Meta:
         ordering = ['created_on']
 
     def __str__(self):
-        return f"{self.no_of_guest}"
+        return self.no_of_guest
+
+    def check_table(self):
+        for table in CAPACITY:
+            if availability is True:
+                return self.capacity
+
