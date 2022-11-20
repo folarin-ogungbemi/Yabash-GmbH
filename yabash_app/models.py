@@ -68,7 +68,10 @@ EVENTS = [
 
 # The Table Entity should be tracked
 class Table(models.Model):
-    capacity = models.CharField(choices=CAPACITY, max_length=10, default="2 People")
+    capacity = models.CharField(
+        choices=CAPACITY,
+        max_length=10,
+        default="2 People")
     available = models.BooleanField(default=False)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now=True)
@@ -95,8 +98,14 @@ class Booking(models.Model):
         null=False,
         blank=False)
     event_date = models.DateField(default=datetime.now)
-    event_time = models.CharField(choices=HOURS, max_length=10, default="10:00 am")
-    event_type = models.CharField(choices=EVENTS, max_length=20, default="Birthday Party")
+    event_time = models.CharField(
+        choices=HOURS,
+        max_length=10,
+        default="10:00 am")
+    event_type = models.CharField(
+        choices=EVENTS,
+        max_length=20,
+        default="Birthday Party")
     event_info = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
