@@ -67,15 +67,7 @@ h2{
     height: 100vh;
 }
 .booking-registration{
-    height: 150vh;
-}
-
-input{
-    border: 0;
-    font-size: 1rem;
-    background-color:  transparent;
-    border-bottom: 1px solid rgba(215, 227, 227, 0.5);
-    color: rgb(215, 227, 227);
+    height: 200vh;
 }
 
 input[type="checkbox" i]{

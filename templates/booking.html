@@ -18,7 +18,17 @@
             {% csrf_token %}
             {{ form | crispy }}
             <div class="d-grid gap-2">
-                <button class="btn btn-danger " type="submit">Reserver Table</button>
+                <button class="btn btn-danger" type="submit">Reserver Table</button>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                  <div class="my-2 text-danger">Important!!!</div>
+                  <small class="text-muted">
+                    Please inform us at the latest 30 minutes before the start of your reserved time of any cancellation or in the case you may be running later than 15 minutes after your reservation time.
+                  </small>
+                  <small class="text-muted">Thank you for your Understanding.</small>
+                </div>
+              </div>
             </div>
             </form>
         </div>
