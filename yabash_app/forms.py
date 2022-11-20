@@ -14,9 +14,9 @@ class BookingForm(ModelForm):
             'event_type',
             'event_info']
     widgets = {
-            'no_of_guest': Select(attrs={'class': 'form-control'}),
+            'no_of_guest': Select(attrs={'class': 'form-select'}),
             'event_date': SelectDateWidget(attrs={'class': 'form-control'}),
-            'event_time': Select(attrs={'class': 'form-control'}),
-            'event_type': Select(attrs={'class': 'form-control'}),
+            'event_time': Select(attrs={'class': 'form-select'}),
+            'event_type': Select(attrs={'class': 'form-select'}),
             'event_info': TextInput(attrs={'class': 'form-control'}),
         }
