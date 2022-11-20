@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+
+
 {% block content %}
+
+{% load crispy_forms_tags %}
 
 <div class="registration">
     <div class="container card user-login">
@@ -12,7 +16,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <form  method="POST" action="{% url 'bookingPage' %}">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form | crispy }}
             <div class="d-grid gap-2">
                 <button class="btn btn-danger " type="submit">Reserver Table</button>
             </div>
