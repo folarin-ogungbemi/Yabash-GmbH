@@ -67,9 +67,10 @@ h2{
 
 input{
     border: 0;
-    font-size: small;
+    font-size: 1rem;
     background-color:  transparent;
     border-bottom: 1px solid rgba(215, 227, 227, 0.5);
+    color: rgb(215, 227, 227);
 }
 
 input[type="checkbox" i]{
