@@ -42,23 +42,29 @@ CAPACITY = (
     (7, "Seven"),
     (8, "Eight"),
     (9, "Nine"),
-    (10, "Ten"))
+    (10, "Ten"),
+    )
 
-AVAILABLE = ((0, "No"), (1, "Yes"))
+TABLE_STATUS = ((0, "No"), (1, "Yes"))
 
 
 # The Table Entity should be tracked
 class Table(models.Model):
     capacity = models.IntegerField(choices=CAPACITY)
-    available = models.IntegerField(choices=AVAILABLE, default=0)
+    available = models.BooleanField(default=False)
     availability = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now=True)
+    table_status = models.IntegerField(choices=TABLE_STATUS, default=0)
 
     class Meta:
         ordering = ['created_on']
 
     def __str__(self):
         return f"{self.capacity}"
+
+    def check_table(self):
+        if TABLE_STATUS == 1:
+            return self.available
 
 
 # Booking system for users
@@ -81,6 +87,7 @@ class Booking(models.Model):
     event_info = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
+    
 
     class Meta:
         ordering = ['created_on']
