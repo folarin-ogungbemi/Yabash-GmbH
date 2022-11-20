@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.views import generic
-from django.views.generic.edit import FormView
+from django.views.generic.list import ListView
 from .models import Testimonial
+from django.views.generic.edit import FormView
 from .forms import BookingForm
 
 
-class Testimonials(generic.ListView):
+class Testimonials(ListView):
     model = Testimonial
     queryset = Testimonial.objects.filter(status=1)
     template_name = 'index.html'
@@ -13,6 +13,5 @@ class Testimonials(generic.ListView):
 
 
 class Bookings(FormView):
-    form = BookingForm
-    template_name = 'index.html'
-    context_object_name = 'bookings'
+    template_name = 'booking.html'
+    form_class = BookingForm

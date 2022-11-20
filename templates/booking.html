@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="registration">
+    <div class="container card user-login">
+      <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+          <h2 class="text-center">MAKE A RESERVATION</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+        <form  method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="d-grid gap-2">
+            <button class="btn btn-danger " type="submit">Book a Table</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    </div>
+
+{% endblock %}
