@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.views.generic.list import ListView
 from .models import Testimonial, Booking
 from django.views.generic.edit import FormView
 from .forms import BookingForm
+from django.http import HttpResponseRedirect
 
 
 class Testimonials(ListView):
@@ -23,6 +24,16 @@ class BookingRecords(ListView):
         return Booking.objects.filter(client=self.request.user.id)
 
 
-class Bookings(FormView):
+class BookingCreateView(FormView):
     template_name = 'booking.html'
     form_class = BookingForm
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        if form.is_valid():
+            form.instance.client = request.user
+            form.save()
+            return HttpResponseRedirect(reverse('homePage'))
+        else:
+            return self.form_invalid(form)
