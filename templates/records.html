@@ -22,7 +22,7 @@
                 <small class="text-muted">Last update:<strong> {{record.updated_on}}</strong></small>
             </div>
             <div class="col-12 col-md-4 text-center d-md-flex flex-column my-auto">
-                <a class="btn btn-success record-btn" href="#" role="button">Update</a>
+                <a class="btn btn-success record-btn" href="{% url 'updateBooking' record.id %}" role="button">Update</a>
                 <a class="btn btn-danger record-btn" href="#" role="button">Delete</a>
             </div>
         </div>

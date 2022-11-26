@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.views.generic.list import ListView
 from .models import Testimonial, Booking
 from django.views.generic.edit import FormView
@@ -37,3 +37,19 @@ class BookingCreateView(FormView):
             return HttpResponseRedirect(reverse('homePage'))
         else:
             return self.form_invalid(form)
+
+
+# Function creates user ability to edit
+# and update form and redirects to records
+def BookingUpdateView(request, record_id):
+    record = get_object_or_404(Booking, id=record_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=record)
+        if form.is_valid():
+            form.save()
+            return redirect('bookingRecord')
+    form = BookingForm(instance=record)
+    context = {
+        'form': form
+    }
+    return render(request, 'update.html', context)
