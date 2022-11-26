@@ -165,6 +165,31 @@ button{
     text-align: center;
 }
 
+
+/*  ***********
+    RECORDS
+    *********** */
+
+.booking-record{
+    margin-top: 10vh;
+    color: rgb(24, 36, 36);
+}
+
+.record-card{
+    background-color: rgb(215, 227, 227);
+    box-shadow: 2px 2px 0.5px 0.5px rgba(24, 36, 36, 0.2);
+    border: none;
+}
+
+.record-card li{
+    list-style: none;
+}
+
+.record-btn{
+    width: 40%;
+    margin: auto;
+}
+
 /*  ***********
     INDEX
     *********** */

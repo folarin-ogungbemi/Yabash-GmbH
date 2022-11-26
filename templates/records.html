@@ -6,24 +6,24 @@
         </div>
     </div>
     {% for record in records %}
-    <div class="container card my-2">
+    <div class="container record-card card my-2">
         <div class="row">
             <div class="col-12 col-md-8 mt-3">
                 <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> Event Type: <strong> {{record.event_type}}</strong>
+                    <li><i class="fa-solid fa-location-dot me-2"></i> Event Type: <strong> {{record.event_type}}</strong>
                     </li>
-                    <li><i class="fa-solid fa-person"></i> Number of Guest: <strong> {{record.number_of_guest}}</strong>
+                    <li><i class="fa-solid fa-person me-2"></i> Number of Guest: <strong> {{record.number_of_guest}}</strong>
                     </li>
-                    <li><i class="fa-solid fa-calendar-days"></i> Event Date: <strong> {{record.event_date}}</strong>
+                    <li><i class="fa-solid fa-calendar-days me-2"></i>Event Date: <strong> {{record.event_date}}</strong>
                     </li>
-                    <li><i class="fa-regular fa-clock"></i> Event Time: <strong> {{record.event_time}}</strong></li>
-                    <li><i class="fa-solid fa-circle-info"></i> Event Info: <strong> {{record.event_info}}</strong></li>
+                    <li><i class="fa-regular fa-clock me-2"></i>Event Time: <strong> {{record.event_time}}</strong></li>
+                    <li><i class="fa-solid fa-circle-info me-2"></i>Event Info: <strong> {{record.event_info}}</strong></li>
                 </ul>
                 <small class="text-muted">Last update:<strong> {{record.updated_on}}</strong></small>
             </div>
             <div class="col-12 col-md-4 text-center d-md-flex flex-column my-auto">
-                <a class="btn btn-success" href="#" role="button">Update</a>
-                <a class="btn btn-danger" href="#" role="button">Delete</a>
+                <a class="btn btn-success record-btn" href="#" role="button">Update</a>
+                <a class="btn btn-danger record-btn" href="#" role="button">Delete</a>
             </div>
         </div>
     </div>
