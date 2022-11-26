@@ -4,9 +4,26 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form | crispy }}
-    <input class="btn btn-danger" type="submit" value="Update">
-</form>
+
+<div class="booking-registration reg">
+    <div class="container card booking-data">
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+                <h2 class="text-center">Update Booking</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="d-grid gap-2">
+                        <input class="btn btn-danger" type="submit" value="Update">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
