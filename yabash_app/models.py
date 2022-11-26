@@ -1,21 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
-
-
-class Headline(models.Model):
-    headtext = models.CharField(max_length=300, null=False, blank=False)
-    subtext = models.CharField(max_length=300, null=False, blank=False)
-    headline_image = CloudinaryField('image')
-    headline_info = models.CharField(max_length=100)
-    status = models.IntegerField(choices=STATUS, default=0)
-
-    def __str__(self):
-        return self.headtext
-
 
 class Author(models.Model):
     name = models.CharField(max_length=100)
