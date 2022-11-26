@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+{% for record in records %}
+    <ul>
+        <li>Event Type: <strong> {{record.event_type}}</strong>
+        </li>
+        <li> Number of Guest: <strong> {{record.number_of_guest}}</strong>
+        </li>
+        <li>Event Date: <strong> {{record.event_date}}</strong>
+        </li>
+        <li>Event Time: <strong> {{record.event_time}}</strong></li>
+        <li> Event Info: <strong> {{record.event_info}}</strong></li>
+    </ul>
+    <small>Last update:<strong> {{record.updated_on}}</strong></small>
+{% endfor %}
+{% endblock %}
