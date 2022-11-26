@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Testimonial, Booking, Author, Table
+from .models import Testimonial, Booking, Author, Table, Hour
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -29,10 +29,27 @@ class BookingAdmin(SummernoteModelAdmin):
 @admin.register(Table)
 class TableAdmin(SummernoteModelAdmin):
     list_display = (
+        'table_ID',
         'capacity',
-        'available',
-        'created_on',
+        'booked_table',
+        'table_status',
         'updated_on')
     list_filter = (
         'capacity',
-        'available',)
+        'booked_table',
+        'table_status')
+
+
+@admin.register(Hour)
+class HourAdmin(SummernoteModelAdmin):
+    list_display = (
+        'hour_ID',
+        'hour',
+        'booked_hour',
+        'hour_status',
+        'updated_on'
+    )
+    list_filter = (
+        'hour',
+        'booked_hour',
+        'hour_status')

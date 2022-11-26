@@ -59,24 +59,45 @@ HOURS = [
 ]
 
 EVENTS = [
-    ("BP", "Birthday Party"),
-    ("M", "Meeting"),
-    ("C", "Ceremony"),
-    ("PR", "Private Reservation"),
+    ("Birthday Party", "Birthday Party"),
+    ("Meeting", "Meeting"),
+    ("Ceremony", "Ceremony"),
+    ("Private Reservation", "Private Reservation"),
 ]
 
+TABLE_STATUS = ((0, "Available"), (1, "Occupied"))
 
-# The Table Entity should be tracked
-class Table(models.Model):
-    capacity = models.CharField(
-        choices=CAPACITY,
-        max_length=10)
-    available = models.BooleanField(default=False)
+
+# Create an Hour Entitiy for selceted hours for each Table in the Restaurant
+class Hour(models.Model):
+    hour_ID = models.CharField(max_length=2, primary_key=True, default="0H")
+    hour = models.CharField(max_length=10, choices=HOURS, unique=True)
+    booked_hour = models.BooleanField(default=False)
+    hour_status = models.IntegerField(choices=TABLE_STATUS, default=0)
     updated_on = models.DateTimeField(auto_now=True)
-    created_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['created_on']
+        ordering = ['hour_ID']
+
+    def __str__(self):
+        return f"{self.hour}"
+
+
+# Create a Table Entity each with an ID keyed
+# for the specific number of guests during Booking
+class Table(models.Model):
+    table_ID = models.IntegerField(primary_key=True, default=0000)
+    capacity = models.CharField(
+        max_length=10,
+        choices=CAPACITY,
+        unique=True)
+    hour_ID = models.ManyToManyField(Hour)
+    booked_table = models.BooleanField(default=False)
+    table_status = models.IntegerField(choices=TABLE_STATUS, default=0)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['table_ID']
 
     def __str__(self):
         return f"{self.capacity}"
@@ -87,26 +108,20 @@ class Booking(models.Model):
     client = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name="user_reservation",
-        null=False,
-        blank=False)
-    number_of_guest = models.ForeignKey(
+        related_name="user_reservation")
+    number_of_guest = models.OneToOneField(
         Table,
         on_delete=models.CASCADE,
-        related_name="table_capacity",
-        null=False,
-        blank=False,
-        default="")
+        related_name="table_capacity")
     event_date = models.DateField(default=datetime.now)
-    event_time = models.CharField(
-        choices=HOURS,
-        max_length=10,
-        default="10:00 am")
+    event_time = models.OneToOneField(
+        Hour,
+        on_delete=models.CASCADE)
     event_type = models.CharField(
         choices=EVENTS,
         max_length=20,
         default="Birthday Party")
-    event_info = models.TextField(blank=True)
+    event_info = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
 
