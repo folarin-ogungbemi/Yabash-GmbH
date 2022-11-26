@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Testimonial, Booking, Author, Table, Hour
+from .models import Testimonial, Subscription, Booking, Author, Table, Hour
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -10,6 +10,8 @@ class TestimonialAdmin(SummernoteModelAdmin):
 
 
 admin.site.register(Author)
+
+admin.site.register(Subscription)
 
 
 @admin.register(Booking)

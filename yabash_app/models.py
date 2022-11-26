@@ -4,6 +4,7 @@ from datetime import datetime
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Author(models.Model):
     name = models.CharField(max_length=100)
 
@@ -29,6 +30,13 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f"{self.summary} by {self.name}"
+
+
+class Subscription(models.Model):
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.email
 
 
 # Defines the capacity of the tables in the restaurant
