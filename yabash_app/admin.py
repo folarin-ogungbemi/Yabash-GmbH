@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Testimonial, Booking, Author, Table, Hour
+from .models import Headline, Testimonial, Booking, Author, Table, Hour
 from django_summernote.admin import SummernoteModelAdmin
+
+
+@admin.register(Headline)
+class HeadlineAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content')
+    search_fields = ['headtext', 'status']
 
 
 @admin.register(Testimonial)

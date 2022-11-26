@@ -69,7 +69,11 @@ h2{
     height: 100vh;
 }
 .booking-registration{
-    height: 200vh;
+    height: 100vh;
+}
+
+.booking-registration .booking-data{
+    margin-top: 10vh;
 }
 
 input[type="checkbox" i]{
