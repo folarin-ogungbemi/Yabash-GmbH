@@ -53,3 +53,10 @@ def BookingUpdateView(request, record_id):
         'form': form
     }
     return render(request, 'update.html', context)
+
+
+# Function creates user ability to delete form and redirects to records
+def BookingDeleteView(request, record_id):
+    record = get_object_or_404(Booking, id=record_id)
+    record.delete()
+    return redirect('bookingRecord')
