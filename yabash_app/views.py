@@ -7,7 +7,6 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 
 
-
 class Testimonials(ListView):
     model = Testimonial
     queryset = Testimonial.objects.filter(status=1)
