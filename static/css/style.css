@@ -210,6 +210,12 @@ button{
     border: none;
 }
 
+.modal{
+    --bs-modal-border-radius:0;
+    --bs-modal-color: rgb(24, 36, 36,);
+    --bs-modal-bg: rgb(215, 227, 227);
+}
+
 .record-card li{
     list-style: none;
 }
