@@ -44,7 +44,7 @@ class BookingCreateView(FormView):
             else:
                 messages.add_message(
                     request,
-                    messages.SUCCESS,
+                    messages.INFO,
                     'Sorry!, but you need to Sign in first.')
                 return HttpResponseRedirect(reverse('account_login'))
         else:
