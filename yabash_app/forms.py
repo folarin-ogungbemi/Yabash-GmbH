@@ -1,9 +1,17 @@
-from django.forms import ModelForm, TextInput, SelectDateWidget, Select
+from django import forms
 from yabash_app.models import Booking
 
 
 # Create the form class.
-class BookingForm(ModelForm):
+class BookingForm(forms.ModelForm):
+    event_info = forms.CharField(
+        label='Event Information',
+        required=False,
+        widget=forms.Textarea(
+            attrs={
+                'rows': 2,
+                'placeholder': "Tell us more about your event...",
+                }))
 
     class Meta:
         model = Booking
@@ -13,10 +21,3 @@ class BookingForm(ModelForm):
             'event_time',
             'event_type',
             'event_info']
-    widgets = {
-            'number_of_guest': Select(attrs={'class': 'form-select'}),
-            'event_date': SelectDateWidget(attrs={'class': 'form-control'}),
-            'event_time': Select(attrs={'class': 'form-select'}),
-            'event_type': Select(attrs={'class': 'form-select'}),
-            'event_info': TextInput(attrs={'class': 'form-control'}),
-        }

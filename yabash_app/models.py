@@ -127,7 +127,7 @@ class Booking(models.Model):
         choices=EVENTS,
         max_length=20,
         default="Birthday Party")
-    event_info = models.TextField(blank=True, null=True)
+    event_info = models.CharField(max_length=300, blank=True, null=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
 

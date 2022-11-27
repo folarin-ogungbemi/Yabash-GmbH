@@ -23,7 +23,6 @@ class BookingAdmin(SummernoteModelAdmin):
         'event_type',
         'event_date',
         'event_time')
-    summernote_fields = ('event_info')
     search_fields = ['client', 'event_type']
     list_filter = ('event_type', 'event_date', 'number_of_guest')
 
