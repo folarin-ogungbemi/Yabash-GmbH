@@ -23,10 +23,29 @@
             </div>
             <div class="col-12 col-md-4 text-center d-md-flex flex-column my-auto">
                 <a class="btn btn-success record-btn" href="{% url 'updateBooking' record.id %}" role="button">Update</a>
-                <a class="btn btn-danger record-btn" href="{% url 'deleteBooking' record.id %}" role="button">Delete</a>
+                <button type="button" class="btn btn-danger record-btn" data-bs-toggle="modal" data-bs-target="#deleteBooking">Delete</button>
             </div>
         </div>
     </div>
+    <!--Delete Modal-->
+    <div class="modal" id="deleteBooking" tabindex="-1">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Delete Booking</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p>Are you sure you want to delete Booking?</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary record-btn" data-bs-dismiss="modal">No</button>
+            <a class="btn btn-danger record-btn" href="{% url 'deleteBooking' record.id %}" role="button">Yes</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--/.Delete Modal-->
     {% empty %}
     <div class="container no-record">
         <div class="row">
