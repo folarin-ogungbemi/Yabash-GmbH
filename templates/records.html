@@ -28,12 +28,12 @@
         </div>
     </div>
     {% empty %}
-    <div class="container">
+    <div class="container no-record">
         <div class="row">
-            <div class="col-6 text-center card">
+            <div class="col-6 text-center no-record-card card">
                 <p>You do not have any records yet.</p>
                 <!--Link to Book a Table-->
-                <button class="btn btn-danger">Add Booking</button>
+                <a href="{% url 'bookingPage' %}"  class="btn btn-danger" role="button">Add Booking</a>
             </div>
         </div>
     </div>
