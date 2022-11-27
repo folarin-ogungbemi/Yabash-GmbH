@@ -32,18 +32,3 @@ class TableAdmin(SummernoteModelAdmin):
     list_display = (
         'table_ID',
         'capacity')
-
-
-# @admin.register(Hour)
-# class HourAdmin(SummernoteModelAdmin):
-#     list_display = (
-#         'hour_ID',
-#         'hour',
-#         'booked_hour',
-#         'hour_status',
-#         'updated_on'
-#     )
-#     list_filter = (
-#         'hour',
-#         'booked_hour',
-#         'hour_status')

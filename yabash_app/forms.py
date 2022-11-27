@@ -4,7 +4,6 @@ from yabash_app.models import Booking
 
 # Create the form class.
 class BookingForm(forms.ModelForm):
-    event_date = forms.DateField()
     event_info = forms.CharField(
         label='Event Information',
         required=False,
