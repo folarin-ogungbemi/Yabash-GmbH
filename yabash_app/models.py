@@ -55,12 +55,19 @@ CAPACITY = [
 
 HOURS = [
     ("08:00 am", "08:00 am"),
+    ("09:00 am", "09:00 am"),
     ("10:00 am", "10:00 am"),
+    ("11:00 am", "11:00 am"),
     ("12:00 pm", "12:00 pm"),
+    ("13:00 pm", "13:00 pm"),
     ("14:00 pm", "14:00 pm"),
+    ("15:00 pm", "15:00 pm"),
     ("16:00 pm", "16:00 pm"),
+    ("17:00 pm", "17:00 pm"),
     ("18:00 pm", "18:00 pm"),
+    ("19:00 pm", "19:00 pm"),
     ("20:00 pm", "20:00 pm"),
+    ("21:00 pm", "21:00 pm"),
     ("22:00 pm", "22:00 pm"),
 ]
 
@@ -71,23 +78,6 @@ EVENTS = [
     ("Private Reservation", "Private Reservation"),
 ]
 
-TABLE_STATUS = ((0, "Available"), (1, "Occupied"))
-
-
-# Create an Hour Entitiy for selceted hours for each Table in the Restaurant
-class Hour(models.Model):
-    hour_ID = models.CharField(max_length=2, primary_key=True, default="0H")
-    hour = models.CharField(max_length=10, choices=HOURS, unique=True)
-    booked_hour = models.BooleanField(default=False)
-    hour_status = models.IntegerField(choices=TABLE_STATUS, default=0)
-    updated_on = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ['hour_ID']
-
-    def __str__(self):
-        return f"{self.hour}"
-
 
 # Create a Table Entity each with an ID keyed
 # for the specific number of guests during Booking
@@ -97,10 +87,6 @@ class Table(models.Model):
         max_length=10,
         choices=CAPACITY,
         unique=True)
-    hour_ID = models.ManyToManyField(Hour)
-    booked_table = models.BooleanField(default=False)
-    table_status = models.IntegerField(choices=TABLE_STATUS, default=0)
-    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['table_ID']
@@ -115,23 +101,26 @@ class Booking(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name="user_reservation")
-    number_of_guest = models.OneToOneField(
+    number_of_guest = models.ForeignKey(
         Table,
         on_delete=models.CASCADE,
-        related_name="table_capacity")
+        related_name="table_capacity",
+        default='')
     event_date = models.DateField(default=datetime.now)
-    event_time = models.OneToOneField(
-        Hour,
-        on_delete=models.CASCADE)
+    event_time = models.CharField(
+        max_length=10,
+        choices=HOURS,
+        default="08:00 am")
     event_type = models.CharField(
         choices=EVENTS,
         max_length=20,
         default="Birthday Party")
     event_info = models.CharField(max_length=300, blank=True, null=True)
-    created_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
+        unique_together = ['number_of_guest', 'event_date', 'event_time']
         ordering = ['created_on']
 
     def __str__(self):
