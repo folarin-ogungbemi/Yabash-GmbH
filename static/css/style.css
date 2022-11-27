@@ -48,7 +48,8 @@ h2{
 .contact-copywrite a:hover,
 .yabash-features i,
 .contact-remote i,
-.testimonial-content i{
+.testimonial-content i,
+.record-card i{
     color: rgb(220, 53, 69,75%);
 }
 
@@ -69,11 +70,7 @@ h2{
     height: 100vh;
 }
 .booking-registration{
-    height: 100vh;
-}
-
-.booking-registration .booking-data{
-    margin-top: 10vh;
+    height: 150vh;
 }
 
 input[type="checkbox" i]{
@@ -390,4 +387,18 @@ button{
 
 .social-networks h3{
     margin-top: 2rem;
+}
+
+/*--------Media Screen ---------*/
+
+@media screen and (max-width: 1200px) {
+    .booking-registration{
+        height: 110vh;
+    }
+
+    .user-login,
+    .user-signup,
+    .booking-data{
+        width: 80%;
+        }
 }
