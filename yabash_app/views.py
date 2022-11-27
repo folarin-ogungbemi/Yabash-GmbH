@@ -4,6 +4,8 @@ from .models import Testimonial, Booking
 from django.views.generic.edit import FormView
 from .forms import BookingForm
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+
 
 
 class Testimonials(ListView):
@@ -34,6 +36,7 @@ class BookingCreateView(FormView):
         if form.is_valid():
             form.instance.client = request.user
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Your Booking has been successfully created.')
             return HttpResponseRedirect(reverse('homePage'))
         else:
             return self.form_invalid(form)
@@ -47,6 +50,7 @@ def BookingUpdateView(request, record_id):
         form = BookingForm(request.POST, instance=record)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Booking has been successfully updated.')
             return redirect('bookingRecord')
     form = BookingForm(instance=record)
     context = {
@@ -59,4 +63,5 @@ def BookingUpdateView(request, record_id):
 def BookingDeleteView(request, record_id):
     record = get_object_or_404(Booking, id=record_id)
     record.delete()
+    messages.add_message(request, messages.SUCCESS, 'Booking has been successfully deleted.')
     return redirect('bookingRecord')
