@@ -171,6 +171,17 @@ button{
     text-align: center;
 }
 
+/*--------------Messages-----------------*/
+.messages{
+    position: fixed;
+    top: 62px;
+    z-index: 100;
+}
+
+.alert{
+    border-radius: 0;
+}
+
 
 /*  ***********
     RECORDS
