@@ -327,7 +327,7 @@
                 </div>
               </div>
           </div>
-            <form>
+            <form method="POST" action="{% url 'homePage' %}">
               <div class="mb-3">
                 {% csrf_token %}
                 {{ form | crispy }}

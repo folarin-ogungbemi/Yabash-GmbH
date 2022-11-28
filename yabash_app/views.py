@@ -16,11 +16,17 @@ from django.contrib import messages
 def testimonial_and_subscription(request):
     testimonials = Testimonial.objects.filter(status=1)
     subscription_form = SubscriptionForm()
-
     context = {
         'testimonials': testimonials,
         'form': subscription_form
     }
+    if request.method == "POST":
+        subscription_form = SubscriptionForm(request.POST)
+        if subscription_form.is_valid():
+            subscription_form.save()
+            return redirect('homePage')
+        else:
+            return subscription_form.form_invalid()
     return render(request, 'index.html', context)
 
 
