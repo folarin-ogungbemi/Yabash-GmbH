@@ -11,13 +11,13 @@
     2.1 Navbar & Canvas
 3. RECORDS
     3.1 Booking Records
-3. INDEX
-    3.1 Hero
-    3.2 Features
-    3.3 About
-    3.4 Contact Section
-        3.4.1 contacts
-        3.4.2 social-network
+4. INDEX
+    4.1 Hero
+    4.2 Features
+    4.3 About
+    4.4 Contact Section
+        4.4.1 contacts
+        4.4.2 social-network
     
 
 */
@@ -42,6 +42,7 @@ h2{
     font-weight: bold;
     font-size: 1.5rem;
     color: #dc3545;
+    text-transform: capitalize;
 }
 
 .social-networks a:hover,
