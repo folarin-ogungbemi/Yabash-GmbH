@@ -7,6 +7,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Author(models.Model):
+    """
+    Names of testimonials
+    """
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -14,6 +17,9 @@ class Author(models.Model):
 
 
 class Testimonial(models.Model):
+    """
+    db Table for testimonials linked with names from Author
+    """
     summary = models.CharField(max_length=100, null=False, blank=False)
     content = models.TextField(null=False, blank=False)
     name = models.ForeignKey(
@@ -34,6 +40,9 @@ class Testimonial(models.Model):
 
 
 class Subscription(models.Model):
+    """
+    db Table for subscribed emails
+    """
     email = models.EmailField(unique=True)
 
     def __str__(self):
@@ -54,6 +63,7 @@ CAPACITY = [
     ("10 People", "10 People"),
     ]
 
+# Available booking hours
 HOURS = [
     ("08:00 am", "08:00 am"),
     ("09:00 am", "09:00 am"),
@@ -72,6 +82,7 @@ HOURS = [
     ("22:00 pm", "22:00 pm"),
 ]
 
+# Types of Events
 EVENTS = [
     ("Birthday Party", "Birthday Party"),
     ("Meeting", "Meeting"),
@@ -96,8 +107,11 @@ class Table(models.Model):
         return f"{self.capacity}"
 
 
-# Booking system for users
 class Booking(models.Model):
+    """
+    Booking system for users with three composite keys
+    'number_of_guest', 'event_date', and 'event_time'.
+    """
     client = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
