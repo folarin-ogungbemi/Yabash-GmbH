@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-from django.core.exceptions import NON_FIELD_ERRORS
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
