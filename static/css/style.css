@@ -61,6 +61,7 @@ h2{
 
 .reg{
     position: relative;
+    background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669674189/register-c_xpxp4v.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -232,6 +233,7 @@ button{
 
 .hero-1{
     height: 70vh;
+    background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669676392/restaurant-rc_eih0wq.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -239,6 +241,7 @@ button{
 }
 .hero-2{
     height: 70vh;
+    background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669494927/dw3refx2qf20tatjunrv.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -246,6 +249,7 @@ button{
 }
 .hero-3{
     height: 70vh;
+    background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669494976/hoaamvctjsnvccohmi8r.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
