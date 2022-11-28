@@ -28,7 +28,10 @@ def testimonial_and_subscription(request):
                     'Thank you for subscribing to our Newsletters.')
             return redirect('homePage')
         else:
-            return subscription_form.form_invalid()
+            messages.add_message(
+                    request,
+                    messages.ERROR,
+                    'Invalid Email address')
     return render(request, 'index.html', context)
 
 
