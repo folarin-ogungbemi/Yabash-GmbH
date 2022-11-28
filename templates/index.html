@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 <!-- Hero -->
 <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
-        <header class="hero-1 d-block w-100">
+        <header class="hero-1 d-block w-100" style="background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669494857/dcxzhvo9idhz7vrpzpe8.jpg);">
             <!-- First Hero Content -->
           <div class="container">
             <div class="row">
@@ -52,7 +53,7 @@
         </header>
       </div>
       <div class="carousel-item" data-bs-interval="5000">
-        <header class="hero-2 d-block w-100">
+        <header class="hero-2 d-block w-100" style="background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669494927/dw3refx2qf20tatjunrv.jpg);">
             <!-- Second Hero Content -->
           <div class="container">
             <div class="row">
@@ -96,7 +97,7 @@
         </header>
       </div>
       <div class="carousel-item" data-bs-interval="5000">
-        <header class="hero-3 d-block w-100">
+        <header class="hero-3 d-block w-100" style="background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669494976/hoaamvctjsnvccohmi8r.jpg);">
             <!-- Third Hero Content-->
           <div class="container">
             <div class="row">
@@ -252,7 +253,7 @@
           class="col-12 col-md-6 my-3 order-md-2 order-first kitchen-image"
         >
           <img
-            src="../static/images/kitchen-cr.jpg"
+            src="https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669674077/kitchen-cr_atuncy.jpg"
             alt="An Image of Iya Bashira's kitchen"
             width="350"
             height="230"

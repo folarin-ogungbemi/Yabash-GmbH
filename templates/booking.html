@@ -4,8 +4,9 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
+{% load static %}
 
-<div class="booking-registration reg">
+<div class="booking-registration reg" style="background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url('{% static "images/register-c.jpg" %}');">
     <div class="container card booking-data">
       <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">

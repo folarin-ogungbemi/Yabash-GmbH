@@ -61,7 +61,6 @@ h2{
 
 .reg{
     position: relative;
-    background-image:linear-gradient(rgba(89, 89, 89, 0.3), rgba(0, 0, 0, 0.3)), url(../images/register-c.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -233,7 +232,6 @@ button{
 
 .hero-1{
     height: 70vh;
-    background-image:linear-gradient(rgba(89, 89, 89, 0.5), rgba(0, 0, 0, 0.5)), url(../images/restaurant-1-c.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -241,7 +239,6 @@ button{
 }
 .hero-2{
     height: 70vh;
-    background-image:linear-gradient(rgba(89, 89, 89, 0.5), rgba(0, 0, 0, 0.5)), url(../images/restaurant-2-c.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -249,7 +246,6 @@ button{
 }
 .hero-3{
     height: 70vh;
-    background-image:linear-gradient(rgba(89, 89, 89, 0.5), rgba(0, 0, 0, 0.5)), url(../images/restaurant-3-c.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
