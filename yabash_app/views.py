@@ -7,13 +7,11 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 
 
-# class Testimonials(ListView):
-#     model = Testimonial
-#     queryset = Testimonial.objects.filter(status=1)
-#     template_name = 'index.html'
-#     context_object_name = 'testimonials'
-
 def testimonial_and_subscription(request):
+    """
+    Function renders social media testimonials from users
+    and allows users to subscribe for Newsletter
+    """
     testimonials = Testimonial.objects.filter(status=1)
     subscription_form = SubscriptionForm()
     context = {
@@ -35,6 +33,9 @@ def testimonial_and_subscription(request):
 
 
 class BookingRecords(ListView):
+    """
+    Class provides readability of users Bookings
+    """
     model = Booking
     form_class = BookingForm
     template_name = 'records.html'
@@ -46,6 +47,10 @@ class BookingRecords(ListView):
 
 
 class BookingCreateView(FormView):
+    """
+    Class renders Booking form view and
+    allow users to create Bookings
+    """
     template_name = 'booking.html'
     form_class = BookingForm
 
@@ -71,9 +76,11 @@ class BookingCreateView(FormView):
             return self.form_invalid(form)
 
 
-# Function creates user ability to edit
-# and update form and redirects to records
 def BookingUpdateView(request, record_id):
+    """
+    Function creates user ability to edit and(or)
+    update form and redirects to records
+    """
     record = get_object_or_404(Booking, id=record_id)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=record)
@@ -91,8 +98,10 @@ def BookingUpdateView(request, record_id):
     return render(request, 'update.html', context)
 
 
-# Function creates user ability to delete form and redirects to records
 def BookingDeleteView(request, record_id):
+    """
+    Function creates user ability to delete form and redirects to records
+    """
     record = get_object_or_404(Booking, id=record_id)
     record.delete()
     messages.add_message(
