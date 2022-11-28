@@ -24,6 +24,10 @@ def testimonial_and_subscription(request):
         subscription_form = SubscriptionForm(request.POST)
         if subscription_form.is_valid():
             subscription_form.save()
+            messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    'Thank you for subscribing to our Newsletters.')
             return redirect('homePage')
         else:
             return subscription_form.form_invalid()
