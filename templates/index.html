@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load crispy_forms_tags %}
 <!-- Hero -->
 <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -328,16 +329,8 @@
           </div>
             <form>
               <div class="mb-3">
-                <label for="subscribeEmail" class="form-label"
-                  >Sign up for our Newsletter</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="subscribeEmail"
-                  placeholder="john@example.com"
-                  aria-describedby="subscribeEmail"
-                >
+                {% csrf_token %}
+                {{ form | crispy }}
               </div>
               <button type="submit" class="btn btn-md btn-danger">
                 Subscribe

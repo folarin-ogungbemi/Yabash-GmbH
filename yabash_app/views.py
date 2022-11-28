@@ -1,17 +1,27 @@
 from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.views.generic.list import ListView
-from .models import Testimonial, Booking
+from .models import Testimonial, Booking, Subscription
 from django.views.generic.edit import FormView
-from .forms import BookingForm
+from .forms import BookingForm, SubscriptionForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 
 
-class Testimonials(ListView):
-    model = Testimonial
-    queryset = Testimonial.objects.filter(status=1)
-    template_name = 'index.html'
-    context_object_name = 'testimonials'
+# class Testimonials(ListView):
+#     model = Testimonial
+#     queryset = Testimonial.objects.filter(status=1)
+#     template_name = 'index.html'
+#     context_object_name = 'testimonials'
+
+def testimonial_and_subscription(request):
+    testimonials = Testimonial.objects.filter(status=1)
+    subscription_form = SubscriptionForm()
+
+    context = {
+        'testimonials': testimonials,
+        'form': subscription_form
+    }
+    return render(request, 'index.html', context)
 
 
 class BookingRecords(ListView):

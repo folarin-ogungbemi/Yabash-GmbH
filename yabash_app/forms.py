@@ -1,5 +1,5 @@
 from django import forms
-from yabash_app.models import Booking
+from yabash_app.models import Booking, Subscription
 
 
 # Create the form class.
@@ -21,3 +21,16 @@ class BookingForm(forms.ModelForm):
             'event_time',
             'event_type',
             'event_info']
+
+
+class SubscriptionForm(forms.ModelForm):
+    email = forms.CharField(
+        label='Sign up for our Newsletter',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': "john@example.com",
+                }))
+
+    class Meta:
+        model = Subscription
+        fields = ['email']
