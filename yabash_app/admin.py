@@ -3,17 +3,21 @@ from .models import Testimonial, Subscription, Booking, Author, Table
 from django_summernote.admin import SummernoteModelAdmin
 
 
+# Testimonials
 @admin.register(Testimonial)
 class TestimonialAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
     search_fields = ['name', 'status']
 
 
+# Names of testimonials
 admin.site.register(Author)
 
+# Subscription for Newsletter
 admin.site.register(Subscription)
 
 
+# Bookings
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
     list_display = ('client', 'event_type', 'event_date', 'event_time')
@@ -27,6 +31,7 @@ class BookingAdmin(SummernoteModelAdmin):
     list_filter = ('event_type', 'event_date', 'number_of_guest')
 
 
+# Table in Restaurant
 @admin.register(Table)
 class TableAdmin(SummernoteModelAdmin):
     list_display = (

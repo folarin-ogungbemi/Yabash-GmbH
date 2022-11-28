@@ -2,7 +2,6 @@ from django import forms
 from yabash_app.models import Booking, Subscription
 
 
-# Create the form class.
 class BookingForm(forms.ModelForm):
     event_info = forms.CharField(
         label='Event Information',
