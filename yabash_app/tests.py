@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 
-# class TestDjango(TestCase):
-
-#     def test_things_works(self):
-#         self.assertEqual(1, 0)
+class URLTests(TestCase):
+    def test_testhomepage(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
