@@ -338,13 +338,12 @@ button{
 }
 
 .testimonial-summary{
-    font-size: calc(0.3rem + 1vw);
     font-weight: 500;
 }
 
 .testimonial-content{
     position: relative;
-    font-size: calc(0.3rem + 1vw);
+    font-size: 16px;
 }
 
 .fa-quote-left{
