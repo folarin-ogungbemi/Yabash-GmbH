@@ -9,7 +9,7 @@ from django.contrib import messages
 
 def testimonial_and_subscription(request):
     """
-    Function renders social media testimonials from users
+    Function renders users testimonials from social media
     and allows users to subscribe for Newsletter
     """
     testimonials = Testimonial.objects.filter(status=1)
