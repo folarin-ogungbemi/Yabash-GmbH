@@ -6,6 +6,7 @@ Yabash is a restaurant application created majorly with the python Django functi
 
 [Link to live website](https://flo-yabash.herokuapp.com/ "visit website")
 
+![Yabash](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669850463/yabash-website_pyorfx.png "Yabash Landing page")
 ---
 
 # User Experience Design
@@ -36,6 +37,7 @@ A mixture of this color was made with #182424. A dark green kind of color and it
 ### Typography
 
 The contents of the website is required to be clear and legible for users. Poppins was the choice for typographic design as it answers the question of readability well with a fallback font of sans-serif. 
+![about text](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669850462/typography_sample_zmesqw.png)
 
 ### graphics & Layout
 
@@ -50,19 +52,24 @@ The website has a landing page with contents providing information about the web
 * Login 
     * The Restaurant website provides the functionality of users having an account and being able to sign in and out at will.
     * User therefore can create an account within the website.
+    [Login panel](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669850463/offcanvas_navbar_okxan1.png "link to image")
 * Notifications
     * Users become aware that they have signed in or signed out with an alert message.
 * User's panel
-    * On the Offcanvas-Navbar on the home page, a logged-in user's name is displayed and can access their booking records.
+    * On the Offcanvas-Navbar on the home page, a logged-in user's name is displayed and can access their booking records. 
+    [User's panel](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669850667/user_profile_xns3lc.png "link to image")
 * Testimonials
     * The website also displays visitors testimonials. The testimonials are randomly selected testimonies from the restaurant's visitor who wrote the organization on their various social link pages.
+    [testimonials](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669851315/testimonials_ecwxka.png "link to image")
 * Newsletter 
     * A user also has the ability to subscribe to Newsletters to keep up to date with news from the Organzation.
+    [Newsletter](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669850462/subscribe_feature_nsgco5.png "link to image")
 * Map
     * A map cluster is also attached in the contact area for easy navigation of users who may find it difficult to locate the Restaurants' physical location.
+    [Location map](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669850463/map_feature_phlz6r.png "link to image")
 * Booking
-    * Create: A logged in user can book a table at the Restaurant.
-    * Read: A logged in user can view their booking records
+    * Create: A logged in user can book a table at the Restaurant.[Booking](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669851315/booking_xfeigz.png "link to image")
+    * Read: A logged in user can view their booking records [Booking record](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669851315/booking_records_olbx8b.png "link to image")
     * Update: User can be able to make changes to their booking
     * Cancel: A created booking can be cancelled.
 
@@ -204,7 +211,7 @@ Heroku is the hosting platform for the project and to deploy, The following step
 * Helpful Documentation  [Django models](https://docs.djangoproject.com/en/4.1/ "Visit django documentation") on how to set up and build with django.
 * Helpful Documentation  [Google Map API](https://developers.google.com/maps/get-started#quickstart "Visit google Map API website") on how to set up Google maps
 * Helpful Academy tutorials [Helpful Academy](https://youtu.be/dHvcioGHg08 "visit helpful Academy youtube channel") on working with class based models in django.
-* Helpful Documentation [Helpful Academy](https://django-allauth.readthedocs.io/en/latest/installation.html "visit helpful Academy youtube channel") on working with class based models in django.
+* Helpful Documentation [Helpful Academy](https://django-allauth.readthedocs.io/en/latest/installation.html "visit django allauth") on setting up account for the project.
 
 ## Content
  * Content was designed and created by me 
