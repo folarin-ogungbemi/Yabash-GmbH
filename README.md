@@ -200,9 +200,21 @@ Heroku is the hosting platform for the project and to deploy, The following step
 # Credits
 
 ## Code
+* The turorial from [Code Institute](https://learn.codeinstitute.net/ci_program/diplomainfullstacksoftwarecommoncurriculum "Visit Code Institute") was the most helpful link from the writing of code to the deployment of the program.
+* Helpful Documentation  [Django models](https://docs.djangoproject.com/en/4.1/ "Visit django documentation") on how to set up and build with django.
+* Helpful Documentation  [Google Map API](https://developers.google.com/maps/get-started#quickstart "Visit google Map API website") on how to set up Google maps
+* Helpful Academy tutorials [Helpful Academy](https://youtu.be/dHvcioGHg08 "visit helpful Academy youtube channel") on working with class based models in django.
+* Helpful Documentation [Helpful Academy](https://django-allauth.readthedocs.io/en/latest/installation.html "visit helpful Academy youtube channel") on working with class based models in django.
 
 ## Content
+ * Content was designed and created by me 
 
 ## Media
+* The images used in the website [Pexels](https://www.pexels.com/ "visit Pexels") were products of pexels.
+* Google Docs was used to create [Google](https://docs.google.com/document/ "visit google docs") the yabash menu and convert to pdf
 
 ## Acknowledgement 
+My sincere appreciation goes to :
+* To my able mentor Ronan, that always come through for me. Thank you always for providing me with relevant tips and information to build these websites.
+* To the always active Code Institute Tutor assistants that always came up with helpful tips and guide, it would not have been possible without your help.
+* To my partner, Mo, for giving her attention at the time of need.
