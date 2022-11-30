@@ -15,11 +15,12 @@ Yabash is a restaurant application created majorly with the python Django functi
     * Navigation through aspects of the website should be easy and lead to exactly where i need to go.
     * Keeping up to date via social media platforms and necessary links is vital.
     * I want to be able to reach out to the organization via their current contact addresses.
-    * I want to be able to sign up for news letters in other to keep up to date with news and the Organization.
+    * I want to be able to sign up for news letters in order to keep up to date with news and the Organization.
     * I want to be able to own an account on the website so that I can make reservations.
     * I want to be able to create, read, update and delete my bookings on the website.
     * I want to see what others say about the restaurant.
     * I want to be able to view the location of the restaurant on the map.
+    * I want to be able to visit the website also on my smartphone, or tablets, when i cannot use my computer.
 
 ## Design
 
