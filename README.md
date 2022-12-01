@@ -41,7 +41,7 @@ The contents of the website is required to be clear and legible for users. Poppi
 
 ### graphics & Layout
 
-## Limitations
+The Website was pre-designed on a graphical paper. A pictogram of what the landing page could look like in order to accomodate informations helpful for the user.
 
 ---
 
@@ -73,6 +73,9 @@ The website has a landing page with contents providing information about the web
     * Update: User can be able to make changes to their booking
     * Cancel: A created booking can be cancelled.
 
+## Features left to be implemented / Limitations
+* The current sign in functionality the website offers does not provide the ability for a user to change their password or delete account. This is a feature that will be considered looking forward.
+* The user does not receive an actual email for subscribing for newsletter.
 ---
 
 # Testing
