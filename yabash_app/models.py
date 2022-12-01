@@ -1,3 +1,5 @@
+# code idea for creation was the idea generated from code institute tutorials
+# and django documentation
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime

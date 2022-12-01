@@ -1,3 +1,5 @@
+# code idea for creation was the idea generated from code institute tutorials
+# youtube tutorials, and django documentation
 from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.views.generic.list import ListView
 from .models import Testimonial, Booking, Subscription

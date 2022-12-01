@@ -1,3 +1,5 @@
+# code idea for creation was the idea generated from code institute tutorials
+# youtube tutorials, and django documentation
 from django import forms
 from yabash_app.models import Booking, Subscription
 

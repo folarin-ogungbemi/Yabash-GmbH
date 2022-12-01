@@ -1,3 +1,5 @@
+# code idea for creation was the idea generated from code institute tutorials
+# and django documentation
 from django.contrib import admin
 from .models import Testimonial, Subscription, Booking, Author, Table
 from django_summernote.admin import SummernoteModelAdmin
