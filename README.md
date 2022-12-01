@@ -162,11 +162,8 @@ A manual testing procedure was implemented. During testing each integral section
 * HTML validator
     * [W3C](https://validator.w3.org/ "link to website"), No significant errors found.
 
-## High Level Testing
-
-## Fixed Bugs
-
 ## Unfixed Bugs
+Error message due to alert could not be fixed as of the moment.
 
 ---
 
