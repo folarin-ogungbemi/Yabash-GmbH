@@ -142,6 +142,11 @@ The website has a landing page with contents providing information about the web
 | Key                       | Created_on            | auto_now_add=True | DateTimeField
 | Key                       | Updated_on            | auto_now=True     | DateTimeField
 
+# Security
+Considering how prone websites are to security issues. Some security procedures were taken into account during development for a secure production.
+* The forms in this website considers a CSRF to prevent malicious attacks by an unknown user.
+* The website is also deployed with a secure HTTP to prevent attacks during transfer of information between client and server.
+* It was also ensured that Debug is set to false before production.
 
 # Testing
 A manual testing procedure was chosen. During testing each integral section of the website was tested.
