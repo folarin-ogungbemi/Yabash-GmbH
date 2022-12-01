@@ -78,6 +78,71 @@ The website has a landing page with contents providing information about the web
 * The user does not receive an actual email for subscribing for newsletter.
 ---
 
+# Architecture
+
+## Database 
+
+* A postgreSQL database offered by elephantSQL was the choice of database connected with the django framework during project development. 
+
+### Entities 
+* User
+    * Allauth account formed the basis for creation of account. a standard account implemented with the program.
+    ``` bash
+    pip install django-allauth 
+    ```
+    and imported for use in django models.
+    ```
+    django.contrib.auth.models
+    ```
+
+* Author
+
+| KEY                       | ATTRIBUTE             | VALIDATION       | FIELD_TYPE
+|---------------------------|-----------------------|------------------|-------------------------------
+| Key                       | name                  | max_length=100   | CharField
+
+* Testimonials
+    * This representation builds a table for each **author ** of a testimonial. This data is assumed to be collected from the restaurant's visitors who gave their opinions from different possible forms including through social media.
+
+| KEY                       | ATTRIBUTE             | VALIDATION       | FIELD_TYPE
+|---------------------------|-----------------------|------------------|-------------------------------
+| Key                       | Summmary              | max_length=100   | CharField
+| Key                       | Content               | null=False, blank=False| TextField
+| Foreign Key(Author)       | Name                  | unique           | FK
+| Key                       | Approved              | default=False    | BooleanField
+| Key                       | Created_on            | auto_now=True    | DateTimeField
+| Key                       | Status                | default=0        | Choices
+
+* Subscription
+    * the subscription table collects email data from users who will be signing up for newsletters
+
+| KEY                       | ATTRIBUTE             | VALIDATION       | FIELD_TYPE
+|---------------------------|-----------------------|------------------|-------------------------------
+| Key                       | email                 | unique           | EmailField
+
+* Table
+    * The table data defines the capacity of the tables available at the restaurant. This table table is built in the admin section offered by django.
+
+| KEY                       | ATTRIBUTE             | VALIDATION       | FIELD_TYPE
+|---------------------------|-----------------------|------------------|-------------------------------
+| Primary Key               | Table_ID              | default=0        | IntegerField
+| Key                       | Capacity              | max_length=10    | CharField
+
+* Booking
+    * Number_of_guest, Event_date, and Event_time were made to exist uniquely together to avoid double booking.
+
+| KEY                       | ATTRIBUTE             | VALIDATION        | FIELD_TYPE
+|---------------------------|-----------------------|-------------------|-------------------------------
+| Foreign Key(User)         | Client                | unique            | FK
+| Foreign_key(Table)        | Number_of_guest       | Table             | FK
+| Key                       | Event_date            | default=datetime.now| DateField
+| Key                       | Event_time            | choices=HOURS     | CharField
+| Key                       | Event_type            | max_length=10     | CharField
+| Key                       | Event_info            | max_length=300    | CharField
+| Key                       | Created_on            | auto_now_add=True | DateTimeField
+| Key                       | Updated_on            | auto_now=True     | DateTimeField
+
+
 # Testing
 
 ## Validator testing
