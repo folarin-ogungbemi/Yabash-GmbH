@@ -144,8 +144,13 @@ The website has a landing page with contents providing information about the web
 
 
 # Testing
+A manual testing procedure was chosen. During testing each integral section of the website was tested.
 
 ## Validator testing
+* Lighthouse testing
+    ![Lighthouse](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669860717/lighthouse_test_xmzsur.png)
+* CSS validator
+    No Errors were found.
 
 ## High Level Testing
 
