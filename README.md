@@ -143,19 +143,24 @@ The website has a landing page with contents providing information about the web
 | Key                       | Updated_on            | auto_now=True     | DateTimeField
 
 # Security
+
 Considering how prone websites are to security issues. Some security procedures were taken into account during development for a secure production.
 * The forms in this website considers a CSRF to prevent malicious attacks by an unknown user.
 * The website is also deployed with a secure HTTP to prevent attacks during transfer of information between client and server.
-* It was also ensured that Debug is set to false before production.
+* The admin path was also changed from the conventional name *admin*
+* It was also ensured that **Debug** is set to **false** before production.
 
 # Testing
-A manual testing procedure was chosen. During testing each integral section of the website was tested.
+A manual testing procedure was implemented. During testing each integral section of the website was tested and no significant errors were found.
 
 ## Validator testing
 * Lighthouse testing
     ![Lighthouse](https://res.cloudinary.com/dzdyzl4r5/image/upload/v1669860717/lighthouse_test_xmzsur.png)
 * CSS validator
-    No Errors were found.
+    * [Jigsaw](https://jigsaw.w3.org/css-validator/ "link to website"), No errors were found.
+
+* HTML validator
+    * [W3C](https://validator.w3.org/ "link to website"), No significant errors found.
 
 ## High Level Testing
 
@@ -290,6 +295,7 @@ Heroku is the hosting platform for the project and to deploy, The following step
 * Helpful Documentation  [Google Map API](https://developers.google.com/maps/get-started#quickstart "Visit google Map API website") on how to set up Google maps
 * Helpful Academy tutorials [Helpful Academy](https://youtu.be/dHvcioGHg08 "visit helpful Academy youtube channel") on working with class based models in django.
 * Helpful Documentation [Helpful Academy](https://django-allauth.readthedocs.io/en/latest/installation.html "visit django allauth") on setting up account for the project.
+* Helpful Django security tips from [Learn Django](https://learndjango.com/tutorials/django-best-practices-security "link to website")
 
 ## Content
  * Content was designed and created by me 

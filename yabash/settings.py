@@ -171,6 +171,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Security
+# code idea from learn django
 SECURE_SSL_REDIRECT = True
 
 SECURE_HSTS_SECONDS = 2592000
